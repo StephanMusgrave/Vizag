@@ -1,41 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @listing.image.url(:medium) %>
-
-<p>
-  <strong>Name English:</strong>
-  <%= @listing.name_english %>
-</p>
-
-<p>
-  <strong>Name Spanish:</strong>
-  <%= @listing.name_spanish %>
-</p>
-
-<p>
-  <strong>Description English:</strong>
-  <%= @listing.description_english %>
-</p>
-
-<p>
-  <strong>Description Spanish:</strong>
-  <%= @listing.description_spanish %>
-</p>
-
-<p>
-  <strong>Size English:</strong>
-  <%= @listing.size_english %>
-</p>
-
-<p>
-  <strong>Size Spanish:</strong>
-  <%= @listing.size_spanish %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @listing.weight %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="thumbnail">
+      <%= image_tag @listing.image.url %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h3><%= @listing.name_english %></h3>
+    <h3><%= @listing.name_spanish %></h3>
+    <p><%= @listing.description_english %></p>
+    <p><%= @listing.description_spanish %></p>
+    <p>Weight: <%= @listing.weight %> gm</p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
 <%= link_to 'Back', listings_path, class: "btn btn-link" %>
