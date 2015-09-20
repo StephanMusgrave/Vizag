@@ -1,32 +1,34 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @listing.image.url(:medium) %>
+
 <p>
-  <strong>Name english:</strong>
+  <strong>Name English:</strong>
   <%= @listing.name_english %>
 </p>
 
 <p>
-  <strong>Name spanish:</strong>
+  <strong>Name Spanish:</strong>
   <%= @listing.name_spanish %>
 </p>
 
 <p>
-  <strong>Description english:</strong>
+  <strong>Description English:</strong>
   <%= @listing.description_english %>
 </p>
 
 <p>
-  <strong>Description spanish:</strong>
+  <strong>Description Spanish:</strong>
   <%= @listing.description_spanish %>
 </p>
 
 <p>
-  <strong>Size english:</strong>
+  <strong>Size English:</strong>
   <%= @listing.size_english %>
 </p>
 
 <p>
-  <strong>Size spanish:</strong>
+  <strong>Size Spanish:</strong>
   <%= @listing.size_spanish %>
 </p>
 
