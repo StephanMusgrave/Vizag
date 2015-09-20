@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  root 'listings#index'
+
   resources :categories
   resources :listings
+
   get 'pages/about'
 
   get 'pages/contact'

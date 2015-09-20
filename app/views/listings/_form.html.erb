@@ -11,39 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name_english %><br>
+  <div class="form-group">
+    <%= f.label "English name" %><br>
     <%= f.text_field :name_english %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name_spanish %><br>
     <%= f.text_field :name_spanish %>
   </div>
-  <div class="field">
-    <%= f.label :string %><br>
-    <%= f.text_field :string %>
-  </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description_english %><br>
     <%= f.text_area :description_english %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description_spanish %><br>
     <%= f.text_area :description_spanish %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :size_english %><br>
     <%= f.text_field :size_english %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :size_spanish %><br>
     <%= f.text_field :size_spanish %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :weight %><br>
     <%= f.number_field :weight %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
