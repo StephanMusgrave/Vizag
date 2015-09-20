@@ -1,0 +1,49 @@
+<%= form_for(@listing) do |f| %>
+  <% if @listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+      <% @listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name_english %><br>
+    <%= f.text_field :name_english %>
+  </div>
+  <div class="field">
+    <%= f.label :name_spanish %><br>
+    <%= f.text_field :name_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :string %><br>
+    <%= f.text_field :string %>
+  </div>
+  <div class="field">
+    <%= f.label :description_english %><br>
+    <%= f.text_area :description_english %>
+  </div>
+  <div class="field">
+    <%= f.label :description_spanish %><br>
+    <%= f.text_area :description_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :size_english %><br>
+    <%= f.text_field :size_english %>
+  </div>
+  <div class="field">
+    <%= f.label :size_spanish %><br>
+    <%= f.text_field :size_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
