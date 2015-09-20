@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920180319) do
+ActiveRecord::Schema.define(version: 20150920182738) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name_english"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150920180319) do
   create_table "listings", force: :cascade do |t|
     t.string   "name_english"
     t.string   "name_spanish"
-    t.string   "string"
     t.text     "description_english"
     t.text     "description_spanish"
     t.string   "size_english"

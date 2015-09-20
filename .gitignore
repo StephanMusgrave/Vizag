@@ -11,7 +11,38 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-# Ignore all logfiles and tempfiles.
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+tmp
+
+# Rails #
+########
+/.bundle
 /log/*
 !/log/.keep
 /tmp
+/public/upload
+/coverage
+Gemfile.lock
+
+# Others #
+##########
+/public/olddata/*
+.vagrant
+./tmp
+Cheffile.lock
+./cookbooks
+bash_history.txt
+.idea
+npm-debug.log
+.env
+*.txt
+
