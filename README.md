@@ -7,8 +7,11 @@ $  heroku run rake db:migrate
 $  open  https://solindia-development.herokuapp.com
 
 ## Setup:
-
 $  bin/rails generate paperclip listing image
 $  bin/rake db:migrate
 
 $  rails generate devise:install
+$  rails g devise:views
+$  rails generate devise User
+$  bin/rake db:migrate
+
