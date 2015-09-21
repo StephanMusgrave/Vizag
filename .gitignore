@@ -46,6 +46,8 @@ npm-debug.log
 .env
 *.txt
 
+# Ignore files uploaded on localhost
+/public/system
 
 # Ignore application configuration
 /config/application.yml
