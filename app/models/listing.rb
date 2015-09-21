@@ -15,5 +15,6 @@ class Listing < ActiveRecord::Base
     end
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates :weight, numericality: { greater_than: 0}
 
 end
