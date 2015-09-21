@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem "paperclip", "~> 4.3"
 gem "paperclip-dropbox", ">= 1.3.2"
+gem "figaro", ">= 1.1.1"
 
 group :test do
   gem 'rspec-rails'

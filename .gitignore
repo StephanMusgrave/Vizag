@@ -46,3 +46,6 @@ npm-debug.log
 .env
 *.txt
 
+
+# Ignore application configuration
+/config/application.yml
