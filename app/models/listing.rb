@@ -16,7 +16,7 @@ class Listing < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
-  validates :name, presence: true
+  validates :name_english, presence: true
   validates :weight, numericality: { greater_than: 0}
   validates_attachment_presence :image
 end
