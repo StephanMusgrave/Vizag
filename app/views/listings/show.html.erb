@@ -13,10 +13,12 @@
     <p><%= @listing.description_spanish %></p>
     <p>Weight: <%= @listing.weight %> gm</p>
     <p>Product code: <%= @listing.id %></p>
+  <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-success" %>
+  <br>
+  <br>
+  <%= link_to 'Delete', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
   </div>
 </div>
 
-<%= link_to 'Destroy', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
 
-<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
 <%= link_to 'Back', listings_path, class: "btn btn-link" %>
