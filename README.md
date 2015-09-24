@@ -8,7 +8,7 @@ $  open  https://solindia-development.herokuapp.com
 
 ## Setup:
 $  bin/rails generate paperclip listing image
-$  bin/rake db:migrate
+$  bin/rails generate migration AddPriceToListing price_euro:integer price_dollar:integer price_gbp:integer
 
 $  rails generate devise:install
 $  rails g devise:views
