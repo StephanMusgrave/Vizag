@@ -13,9 +13,9 @@
     <p><%= @listing.description_english %></p>
     <p><%= @listing.description_spanish %></p>
     <p>Weight: <%= @listing.weight %> gm</p>
-    <p>Price: <%= number_to_currency((@listing.price_euro / 100), unit: "€" ) %></p>
-    <p>Price: <%= number_to_currency((@listing.price_gbp / 100), unit: "£" ) %></p>
-    <p>Price: <%= number_to_currency((@listing.price_dollar / 100), unit: "$" ) %></p>
+    <p>EU Price: <%= number_to_currency((@listing.price_euro / 100.0), unit: "€" ) %></p>
+    <p>GB Price: <%= number_to_currency((@listing.price_gbp / 100.0), unit: "£" ) %></p>
+    <p>US Price: <%= number_to_currency((@listing.price_dollar / 100.0), unit: "$" ) %></p>
     <%= link_to 'Edit Product', edit_listing_path(@listing), class: "btn btn-primary" %>
     <br>
     <br>
