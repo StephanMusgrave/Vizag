@@ -9,7 +9,7 @@
           <div class="caption">
             <h3><%= listing.name_english %></h3>
             <!-- <h3><%#= listing.name_spanish %></h3> -->
-            <p>Product code: <%= listing.id %></p>
+            <p>Product code: <%= listing.id %>&nbsp&nbsp<%= number_to_currency((listing.price_euro / 100), unit: "€" ) %></p>
 
             <%= link_to 'Show', listing, class: "btn btn-link" %>
           </div>

@@ -76,6 +76,10 @@ class ListingsController < ApplicationController
         :size_english,
         :size_spanish,
         :weight,
-        :image)
+        :image,
+        :price_euro,
+        :price_dollar,
+        :price_gbp,
+        )
     end
 end

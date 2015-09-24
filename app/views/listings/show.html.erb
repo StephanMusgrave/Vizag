@@ -7,13 +7,16 @@
     </div>
   </div>
   <div class="col-md-6">
+    <p>Product code: <%= @listing.id %></p>
     <h3><%= @listing.name_english %></h3>
     <h3><%= @listing.name_spanish %></h3>
     <p><%= @listing.description_english %></p>
     <p><%= @listing.description_spanish %></p>
     <p>Weight: <%= @listing.weight %> gm</p>
-    <p>Product code: <%= @listing.id %></p>
-    <%= link_to 'Edit Product', edit_listing_path(@listing), class: "btn btn-success" %>
+    <p>Price: <%= number_to_currency((@listing.price_euro / 100), unit: "€" ) %></p>
+    <p>Price: <%= number_to_currency((@listing.price_gbp / 100), unit: "£" ) %></p>
+    <p>Price: <%= number_to_currency((@listing.price_dollar / 100), unit: "$" ) %></p>
+    <%= link_to 'Edit Product', edit_listing_path(@listing), class: "btn btn-primary" %>
     <br>
     <br>
     <%= link_to 'Delete Product', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
