@@ -17,3 +17,7 @@ $  rails g devise:views
 $  rails generate devise User
 $  bin/rake db:migrate
 
+$ bin/rails g model image_container name:string
+$ bin/rails g paperclip image_container picture
+
+
