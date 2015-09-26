@@ -18,10 +18,13 @@
     <p>GB Price: <%#= number_to_currency((@listing.price_gbp / 100.0), unit: "£" ) %></p>
     <p>US Price: <%#= number_to_currency((@listing.price_dollar / 100.0), unit: "$" ) %></p>
  -->
-    <%= link_to 'Edit Product', edit_listing_path(@listing), class: "btn btn-primary" %>
-    <br>
-    <br>
-    <%= link_to 'Delete Product', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+
+    <% if !current_user.nil? && current_user.has_manager %>
+      <%= link_to 'Edit Product', edit_listing_path(@listing), class: "btn btn-primary" %>
+      <br>
+      <br>
+      <%= link_to 'Delete Product', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    <% end %>
   </div>
 </div>
 
