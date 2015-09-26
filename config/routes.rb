@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'listings#index'
 
   resources :categories
-  resources :listings
+
+  resources :listings do
+    resources :image_containers
+  end
 
   get 'pages/about'
 
