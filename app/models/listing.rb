@@ -18,7 +18,7 @@ class Listing < ActiveRecord::Base
 
   validates :name_english, presence: true
   validates :weight, numericality: { greater_than: 0}
-  validates :price_euro, :price_dollar, :price_gbp, numericality: { greater_than: 0}
+  # validates :price_euro, :price_dollar, :price_gbp, numericality: { greater_than: 0}
 
   validates_attachment_presence :image
 end
