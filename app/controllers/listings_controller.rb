@@ -15,6 +15,7 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
+    @listing.image_containers.new
   end
 
   # GET /listings/1/edit
@@ -56,7 +57,7 @@ class ListingsController < ApplicationController
   def destroy
     @listing.destroy
     respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
+      format.html { redirect_to listings_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -80,6 +81,7 @@ class ListingsController < ApplicationController
         :price_euro,
         :price_dollar,
         :price_gbp,
+        :image_containers_attributes => [:picture, :original_filename, :content_type, :headers]
         )
     end
 end

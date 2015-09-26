@@ -1,2 +1,3 @@
-module ImageContainerHelper
+module ImageContainersHelper
+
 end
