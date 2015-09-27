@@ -35,5 +35,4 @@ class Listing < ActiveRecord::Base
     image_containers.any? ? image_containers.first.picture : 'no image'
   end
 
-
 end

@@ -5,6 +5,11 @@
     <div class="thumbnail">
       <%= image_tag @listing.image.url %>
     </div>
+    <div class="thumbnail">
+      <%= @listing.image_containers.each do |imgc| %>
+          <%= image_tag imgc.picture.url %>
+      <% end %>
+    </div>
   </div>
   <div class="col-md-6">
     <p>Product code: <%= @listing.id %></p>
