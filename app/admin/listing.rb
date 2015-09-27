@@ -15,9 +15,12 @@ ActiveAdmin.register Listing do
                 :price_gbp,
                 :image_containers_attributes => [:picture, :original_filename, :content_type, :headers]
 
-  filter :name_english_or_name_spanish
-  filter :description_english_or_description_spanish
-  filter :size_english_or_size_spanish
+  filter :name_english, label: "English name"
+  filter :name_spanish, label: "Spanish name"
+  filter :description_english, label: "English description"
+  filter :description_spanish, label: "Spanish description"
+  filter :size_english, label: "English size"
+  filter :size_spanish, label: "Spanish size"
   filter :weight
   filter :price_euro
   filter :price_dollar
@@ -27,8 +30,19 @@ ActiveAdmin.register Listing do
     selectable_column
     column("ID"){ |listing| link_to listing.id, admin_listing_path(listing) }
 
-    column("English name") { |listing| listing.name_english }
-
+    column("Name") do |listing|
+      raw("#{listing.name_english}<br>#{listing.name_spanish}")
+    end
+    column("Description") do |listing|
+      raw("#{listing.description_english} <br> #{listing.description_spanish}")
+    end
+    column("Size") do |listing|
+      raw("#{listing.size_english} <br> #{listing.size_spanish}")
+    end
+    column("Price") do |listing|
+      raw("€#{listing.price_euro} <br> $#{listing.price_dollar}<br> £#{listing.price_gbp}")
+    end
+    actions
   end
 
 end
