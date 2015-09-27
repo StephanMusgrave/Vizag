@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  has_many :image_containers
+  has_many :image_containers, :dependent => :destroy
   accepts_nested_attributes_for :image_containers, allow_destroy: true
 
   if Rails.env.development?
