@@ -31,16 +31,16 @@ ActiveAdmin.register Listing do
     column("ID"){ |listing| link_to listing.id, admin_listing_path(listing) }
 
     column("Name") do |listing|
-      raw("#{listing.name_english}<br>#{listing.name_spanish}")
+      raw("#{listing.name_english}<br><br>#{listing.name_spanish}")
     end
     column("Description") do |listing|
-      raw("#{listing.description_english} <br> #{listing.description_spanish}")
+      raw("#{listing.description_english} <br><br> #{listing.description_spanish}")
     end
     column("Size") do |listing|
-      raw("#{listing.size_english} <br> #{listing.size_spanish}")
+      raw("#{listing.size_english} <br><br> #{listing.size_spanish}")
     end
     column("Price") do |listing|
-      raw("€#{listing.price_euro} <br> $#{listing.price_dollar}<br> £#{listing.price_gbp}")
+      raw("€#{listing.price_euro} <br><br> $#{listing.price_dollar}<br><br> £#{listing.price_gbp}")
     end
     actions
   end
