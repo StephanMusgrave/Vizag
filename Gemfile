@@ -17,6 +17,8 @@ gem "paperclip", "~> 4.3"
 gem "paperclip-dropbox", ">= 1.3.2"
 gem "figaro", ">= 1.1.1"
 gem "devise", ">= 3.5.2"
+gem 'activeadmin', '~> 1.0.0.pre1'
+
 
 group :test do
   gem 'rspec-rails'
