@@ -1,4 +1,6 @@
 class ImageContainer < ActiveRecord::Base
+  belongs_to :listing
+
   if Rails.env.development?
     has_attached_file :picture,
       :styles => { :medium => "200x",
@@ -16,5 +18,4 @@ class ImageContainer < ActiveRecord::Base
 
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
-  belongs_to :listing
 end

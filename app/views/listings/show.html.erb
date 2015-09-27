@@ -5,12 +5,15 @@
     <div class="thumbnail">
       <%= image_tag @listing.image.url %>
     </div>
-    <div class="thumbnail">
-      <%= @listing.image_containers.each do |imgc| %>
-          <%= image_tag imgc.picture.url %>
-      <% end %>
-    </div>
+
+
+    <% @listing.image_containers.each do |imgc| %>
+      <div class="thumbnail">
+        <%= image_tag imgc.picture.url %>
+      </div>
+    <% end %>
   </div>
+
   <div class="col-md-6">
     <p>Product code: <%= @listing.id %></p>
     <h3><%= @listing.name_english %></h3>
@@ -18,11 +21,7 @@
     <p><%= @listing.description_english %></p>
     <p><%= @listing.description_spanish %></p>
     <p>Weight: <%= @listing.weight %> gm</p>
-<!--
-    <p>EU Price: <%#= number_to_currency((@listing.price_euro / 100.0), unit: "€" ) %></p>
-    <p>GB Price: <%#= number_to_currency((@listing.price_gbp / 100.0), unit: "£" ) %></p>
-    <p>US Price: <%#= number_to_currency((@listing.price_dollar / 100.0), unit: "$" ) %></p>
- -->
+<!-- <p>EU Price: <%#= number_to_currency((@listing.price_euro / 100.0), unit: "€" ) %></p> -->
 
     <% if !current_user.nil? && current_user.has_manager %>
       <%= link_to 'Edit Product', edit_listing_path(@listing), class: "btn btn-primary" %>
