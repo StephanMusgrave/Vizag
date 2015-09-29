@@ -39,6 +39,7 @@ ActiveAdmin.register Listing do
     column("Size") do |listing|
       raw("#{listing.size_english} <br><br> #{listing.size_spanish}")
     end
+    column :weight
     column("Price") do |listing|
       raw("€#{listing.price_euro} <br><br> $#{listing.price_dollar}<br><br> £#{listing.price_gbp}")
     end
