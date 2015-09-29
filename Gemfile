@@ -18,6 +18,8 @@ gem "paperclip-dropbox", ">= 1.3.2"
 gem "figaro", ">= 1.1.1"
 gem "devise", ">= 3.5.2"
 gem 'activeadmin', '~> 1.0.0.pre1'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 
 group :test do
