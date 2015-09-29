@@ -2,7 +2,7 @@
 
 <div class="center">
   <div class="row">
-    <% @listings.shuffle.each do |listing| %>
+    <% @listings.each do |listing| %>
       <div class="col-md-3">
         <div class="thumbnail">
           <%#= image_tag listing.image.url %>
@@ -22,6 +22,8 @@
   </div>
 </div>
 
+<br>
+<%= will_paginate @listings, :previous_label => ' < ', :next_label => ' > ', renderer: BootstrapPagination::Rails %>
 <br>
 
 
