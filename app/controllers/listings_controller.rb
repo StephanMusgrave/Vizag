@@ -4,8 +4,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all.paginate(page: params[:page], per_page: 16)
-    @listings.shuffle
+    @listings = Listing.all.paginate(page: params[:page], per_page: 12)
   end
 
   # GET /listings/1
