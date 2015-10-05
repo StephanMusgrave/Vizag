@@ -2,7 +2,8 @@ ActiveAdmin.register ImageContainer do
 
   index do
     column :id
-    column :listing_id
+    # column :listing_id
+    column("Listing"){ |image_container| image_container.listing.name_english }
     # column("Listing ID"){ |listing| link_to listing_id, admin_listing_path(listing) }
     column :name
     column :picture_file_name
