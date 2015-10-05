@@ -1,7 +1,5 @@
 ActiveAdmin.register Listing do
 
-
-
   permit_params :name_english,
                 :name_spanish,
                 :description_english,
