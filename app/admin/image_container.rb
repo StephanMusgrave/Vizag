@@ -13,6 +13,9 @@ ActiveAdmin.register ImageContainer do
     column :picture_updated_at
     column :created_at
     column :updated_at
+    column("image") do |image_container|
+      "#{image_tag image_container.picture.url}"
+    end
   end
 
 end
