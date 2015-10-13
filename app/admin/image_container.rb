@@ -1,12 +1,15 @@
-ActiveAdmin.register ImageContainer do
+ActiveAdmin.register ImageContainer, as: "Image" do
 
   index do
-    column :id
-    column :listing_id
-    column("") do |image_container|
+    column("Product ID") do |image_container|
+      "#{image_container.listing.id}"
+    end
+    column("Image ID") do |image_container|
+      "#{image_container.id}"
+    end
+    column("Product Name") do |image_container|
       "#{image_container.listing.name_english}"
     end
-    column :name
     column :picture_file_name
     column :picture_file_size
     column :picture_content_type

@@ -1,4 +1,4 @@
-ActiveAdmin.register Listing do
+ActiveAdmin.register Listing, as: "Product" do
 
   permit_params :name_english,
                 :name_spanish,
