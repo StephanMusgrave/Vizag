@@ -1,6 +1,4 @@
-ActiveAdmin.register Listing do
-
-
+ActiveAdmin.register Listing, as: "Product" do
 
   permit_params :name_english,
                 :name_spanish,
@@ -28,20 +26,20 @@ ActiveAdmin.register Listing do
 
   index do
     selectable_column
-    column("ID"){ |listing| link_to listing.id, admin_listing_path(listing) }
+    column("ID"){ |product| link_to product.id, admin_product_path(product) }
 
-    column("Name") do |listing|
-      raw("#{listing.name_english}<br><br>#{listing.name_spanish}")
+    column("Name") do |product|
+      raw("#{product.name_english}<br><br>#{product.name_spanish}")
     end
-    column("Description") do |listing|
-      raw("#{listing.description_english} <br><br> #{listing.description_spanish}")
+    column("Description") do |product|
+      raw("#{product.description_english} <br><br> #{product.description_spanish}")
     end
-    column("Size") do |listing|
-      raw("#{listing.size_english} <br><br> #{listing.size_spanish}")
+    column("Size") do |product|
+      raw("#{product.size_english} <br><br> #{product.size_spanish}")
     end
     column :weight
-    column("Price") do |listing|
-      raw("€#{listing.price_euro} <br><br> $#{listing.price_dollar}<br><br> £#{listing.price_gbp}")
+    column("Price") do |product|
+      raw("€#{product.price_euro} <br><br> $#{product.price_dollar}<br><br> £#{product.price_gbp}")
     end
     actions
   end

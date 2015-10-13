@@ -4,7 +4,8 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Vizag"
+  config.site_title = "SolIndia Admin"
+
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -119,7 +120,7 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+  config.comments = false
   #
   # You can disable the menu item for the comments index page:
   # config.show_comments_in_menu = false
