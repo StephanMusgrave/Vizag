@@ -41,7 +41,7 @@ group :development, :test do
   gem 'web-console',           '~> 2.0'
   gem 'spring'
   gem 'spring-commands-rspec', '1.0.4'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'quiet_assets', '1.1.0' # from now on each gem should be given a version
   gem 'jasmine', '2.3.0'
   gem 'dotenv-rails'

@@ -369,7 +369,7 @@ DEPENDENCIES
   database_cleaner
   devise (>= 3.5.2)
   dotenv-rails
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   faker
   figaro (>= 1.1.1)
   guard-rspec

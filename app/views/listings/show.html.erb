@@ -16,6 +16,9 @@
 
   <div class="col-md-6">
     <p>Product code: <%= @listing.id %></p>
+    <% if @listing.category_id != nil %>
+      <p>Category: <%= @listing.category.name_english %></p>
+    <% end %>
     <h3><%= @listing.name_english %></h3>
     <h3><%= @listing.name_spanish %></h3>
     <p><%= @listing.description_english %></p>
