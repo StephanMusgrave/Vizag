@@ -11,8 +11,10 @@ ActiveAdmin.register Listing, as: "Product" do
                 :price_euro,
                 :price_dollar,
                 :price_gbp,
+                :category_id,
                 :image_containers_attributes => [:picture, :original_filename, :content_type, :headers]
 
+  filter :category
   filter :name_english, label: "English name"
   filter :name_spanish, label: "Spanish name"
   filter :description_english, label: "English description"
@@ -41,7 +43,31 @@ ActiveAdmin.register Listing, as: "Product" do
     column("Price") do |product|
       raw("€#{product.price_euro} <br><br> $#{product.price_dollar}<br><br> £#{product.price_gbp}")
     end
+    # column :category
+    column("Category") do |product|
+      if product.category_id?
+        product.category.name_english
+      end
+    end
     actions
+  end
+
+  # This is how you edit the forms for the  "Edit" and "Create" pages.
+  form do |f|
+    f.inputs do
+      f.input :category, :as => :select, :prompt => "Category", :collection => Category.pluck(:name_english, :id)
+      f.input :name_english
+      f.input :name_spanish
+      f.input :description_spanish
+      f.input :description_english
+      f.input :size_spanish
+      f.input :size_english
+      f.input :weight
+      f.input :price_euro
+      f.input :price_dollar
+      f.input :price_gbp
+    end
+    f.actions
   end
 
 end
