@@ -1,4 +1,5 @@
 class Listing < ActiveRecord::Base
+  belongs_to :category
   has_many :image_containers, :dependent => :destroy
   accepts_nested_attributes_for :image_containers, allow_destroy: true
 

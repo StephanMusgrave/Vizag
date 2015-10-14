@@ -4,8 +4,13 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @all_listings = Listing.all
-    @listings_per_page = Listing.all.paginate(page: params[:page], per_page: 12)
+    if params[:category].blank?
+      @all_listings = Listing.all
+    else
+      @category_id = Category.find_by(name_english: params[:category]).id
+      @all_listings = Listing.where(category_id: @category_id)
+    end
+    @listings_per_page = @all_listings.paginate(page: params[:page], per_page: 12)
   end
 
   # GET /listings/1
@@ -92,6 +97,7 @@ class ListingsController < ApplicationController
         :price_euro,
         :price_dollar,
         :price_gbp,
+        :category_id,
         :image_containers_attributes => [:picture, :original_filename, :content_type, :headers]
         )
     end
