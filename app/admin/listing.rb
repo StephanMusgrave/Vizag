@@ -14,13 +14,13 @@ ActiveAdmin.register Listing, as: "Product" do
                 :category_id,
                 :image_containers_attributes => [:picture, :original_filename, :content_type, :headers]
 
-  filter :category
-  filter :name_english, label: "English name"
-  filter :name_spanish, label: "Spanish name"
-  filter :description_english, label: "English description"
-  filter :description_spanish, label: "Spanish description"
-  filter :size_english, label: "English size"
-  filter :size_spanish, label: "Spanish size"
+  filter :category_id,          label: "Category ID #"
+  filter :name_english,         label: "English name"
+  filter :name_spanish,         label: "Spanish name"
+  filter :description_english,  label: "English description"
+  filter :description_spanish,  label: "Spanish description"
+  filter :size_english,         label: "English size"
+  filter :size_spanish,         label: "Spanish size"
   filter :weight
   filter :price_euro
   filter :price_dollar
@@ -39,12 +39,14 @@ ActiveAdmin.register Listing, as: "Product" do
     column("Size") do |product|
       raw("#{product.size_english} <br><br> #{product.size_spanish}")
     end
+
     column :weight
+
     column("Price") do |product|
       raw("€#{product.price_euro} <br><br> $#{product.price_dollar}<br><br> £#{product.price_gbp}")
     end
     # column :category
-    column("Category") do |product|
+    column 'Category', sortable: :category_id do |product|
       if product.category_id?
         product.category.name_english
       end
