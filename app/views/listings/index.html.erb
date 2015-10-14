@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="center">
+  <h1><%= @title %> </h1><br>
   <div class="row">
-    <% @listings_per_page.each do |listing| %>
+    <% @listings.each do |listing| %>
       <div class="col-md-2">
         <div class="thumbnail">
           <%#= image_tag listing.image.url %>
@@ -23,7 +24,7 @@
 </div>
 
 <br>
-<%= will_paginate @listings_per_page, :previous_label => ' < ', :next_label => ' > ', renderer: BootstrapPagination::Rails %>
+<%= will_paginate @listings, :previous_label => ' < ', :next_label => ' > ', renderer: BootstrapPagination::Rails %>
 <br>
 
 
