@@ -2,7 +2,7 @@
 directories %w(app lib config spec features)
 clearing :on
 
-# noolearn Guardfile:
+# Solindia Guardfile:
 # guard :rspec, cmd: "spring rspec" do
 
 guard :rspec, cmd: "bundle exec rspec" do
