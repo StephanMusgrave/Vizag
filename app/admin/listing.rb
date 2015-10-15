@@ -12,10 +12,11 @@ ActiveAdmin.register Listing, as: "Product" do
                 :price_dollar,
                 :price_gbp,
                 :category_id,
+                :category_name,
                 :category_name_english,
                 :image_containers_attributes => [:picture, :original_filename, :content_type, :headers]
 
-  filter :category_id,          label: "Category ID #"
+  filter :category_id,          label: "Category ID"
   filter :name_english,         label: "English name"
   filter :name_spanish,         label: "Spanish name"
   filter :description_english,  label: "English description"
@@ -46,12 +47,12 @@ ActiveAdmin.register Listing, as: "Product" do
     column("Price") do |product|
       raw("€#{product.price_euro} <br><br> $#{product.price_dollar}<br><br> £#{product.price_gbp}")
     end
-    # column :category
+    # column :category_name
     column 'Category', sortable: :category_id do |product|
       if product.category_id?
-        ("#{product.category.id} #{product.category.name_english}")
-
-
+        "##{product.category.id}  #{product.category_name}"
+      else
+        "n/a"
       end
     end
     actions

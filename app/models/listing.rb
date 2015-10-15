@@ -16,7 +16,7 @@ class Listing < ActiveRecord::Base
       :storage => :dropbox,
       :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
       :path => ":style/:id_:filename"
-    end
+  end
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
@@ -34,6 +34,11 @@ class Listing < ActiveRecord::Base
 
   def main_pic
     image_containers.any? ? image_containers.first.picture : 'no image'
+  end
+
+  def category_name
+    # Category.where(listing_id: id).name_english
+    category_id? ? self.category.name_english : 'no category'
   end
 
 end
