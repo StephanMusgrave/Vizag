@@ -5,15 +5,12 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     if params[:category].blank?
-      # @all_listings = Listing.all
-      # @listings_per_page = @all_listings.order('random()').paginate(page: params[:page], per_page: 12)
-      @title = "Our Products"
+      @title    = "Our Products"
       @listings = Listing.all.order('random()').paginate(page: params[:page], per_page: 12)
     else
       @category_id = Category.find_by(name_english: params[:category]).id
-      @title = Category.find_by(name_english: params[:category]).name_english
-      # @all_listings = Listing.where(category_id: @category_id)
-      @listings = Listing.where(category_id: @category_id).paginate(page: params[:page], per_page: 18)
+      @title       = Category.find_by(name_english: params[:category]).name_english
+      @listings    = Listing.where(category_id: @category_id).paginate(page: params[:page], per_page: 12)
     end
   end
 
