@@ -48,7 +48,9 @@ ActiveAdmin.register Listing, as: "Product" do
     # column :category
     column 'Category', sortable: :category_id do |product|
       if product.category_id?
-        product.category.name_english
+        ("#{product.category.id} #{product.category.name_english}")
+
+
       end
     end
     actions
