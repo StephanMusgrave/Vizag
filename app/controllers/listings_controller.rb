@@ -13,7 +13,7 @@ class ListingsController < ApplicationController
       @category_id = Category.find_by(name_english: params[:category]).id
       @title = Category.find_by(name_english: params[:category]).name_english
       # @all_listings = Listing.where(category_id: @category_id)
-      @listings = Listing.where(category_id: @category_id).paginate(page: params[:page], per_page: 18)
+      @listings = Listing.where(category_id: @category_id).order("updated_at DESC").paginate(page: params[:page], per_page: 18)
     end
   end
 
