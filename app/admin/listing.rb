@@ -12,6 +12,7 @@ ActiveAdmin.register Listing, as: "Product" do
                 :price_dollar,
                 :price_gbp,
                 :category_id,
+                :category_name_english,
                 :image_containers_attributes => [:picture, :original_filename, :content_type, :headers]
 
   filter :category_id,          label: "Category ID #"
