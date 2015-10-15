@@ -6,7 +6,8 @@ class ListingsController < ApplicationController
   def index
     if params[:category].blank?
       @title    = "Our Products"
-      @listings = Listing.all.order('random()').paginate(page: params[:page], per_page: 12)
+      # @listings = Listing.all.order('random()').paginate(page: params[:page], per_page: 12)
+      @listings = Listing.all.order("updated_at DESC").paginate(page: params[:page], per_page: 12)
     else
       @category_id = Category.find_by(name_english: params[:category]).id
       @title       = Category.find_by(name_english: params[:category]).name_english
