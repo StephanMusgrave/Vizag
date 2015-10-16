@@ -14,6 +14,8 @@ ActiveAdmin.register Listing, as: "Product" do
                 :category_id,
                 :category_name,
                 :category_name_english,
+                :created_at,
+                :updated_at,
                 :image_containers_attributes => [:picture, :original_filename, :content_type, :headers]
 
   filter :category_id,          label: "Category ID"
@@ -55,6 +57,7 @@ ActiveAdmin.register Listing, as: "Product" do
         "n/a"
       end
     end
+    column :updated_at
     actions
   end
 
