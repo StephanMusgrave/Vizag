@@ -45,6 +45,7 @@ group :development, :test do
   gem 'quiet_assets', '1.1.0' # from now on each gem should be given a version
   gem 'jasmine', '2.3.0'
   gem 'dotenv-rails'
+  gem 'rack-mini-profiler'
 end
 
 group :production do
