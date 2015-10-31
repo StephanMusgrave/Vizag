@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   private
 
   def miniprofiler
-    Rack::MiniProfiler.authorize_request # if user.has_manager?
+    Rack::MiniProfiler.authorize_request if user.has_manager?
   end
 
 end
