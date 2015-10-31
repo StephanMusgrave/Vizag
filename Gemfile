@@ -20,6 +20,7 @@ gem "devise", ">= 3.5.2"
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
+gem 'rack-mini-profiler'  # http://railscasts.com/episodes/368-miniprofiler?autoplay=true
 
 
 group :test do
@@ -45,12 +46,10 @@ group :development, :test do
   gem 'quiet_assets', '1.1.0' # from now on each gem should be given a version
   gem 'jasmine', '2.3.0'
   gem 'dotenv-rails'
-  gem 'rack-mini-profiler'
 end
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'rack-mini-profiler'
 end
 
