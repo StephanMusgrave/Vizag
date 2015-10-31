@@ -7,12 +7,13 @@ class ListingsController < ApplicationController
     if params[:category].blank?
       @title    = "Our Products"
       # @listings = Listing.all.order('random()').paginate(page: params[:page], per_page: 12)
-      @listings = Listing.all.order("updated_at DESC").paginate(page: params[:page], per_page: 12)
+      @listings = Listing.all_cached.order("updated_at DESC").paginate(page: params[:page], per_page: 12)
     else
       @category_id = Category.find_by(name_english: params[:category]).id
       @title       = Category.find_by(name_english: params[:category]).name_english
       @listings    = Listing.where(category_id: @category_id).order("updated_at DESC").paginate(page: params[:page], per_page: 12)
     end
+    # @stats = Rails.cache.stats.first.last
   end
 
   # GET /listings/1

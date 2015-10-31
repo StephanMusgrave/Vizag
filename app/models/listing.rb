@@ -26,6 +26,10 @@ class Listing < ActiveRecord::Base
 
   validates_attachment_presence :image
 
+  after_save    :expire_contact_all_cache
+  after_destroy :expire_contact_all_cache
+
+
   def at_least_one_picture
     unless image_containers.any?
       errors[:base] << 'You must add at least one image'
@@ -40,5 +44,14 @@ class Listing < ActiveRecord::Base
     # Category.where(listing_id: id).name_english
     category_id? ? self.category.name_english : 'no category'
   end
+
+  def self.all_cached
+    Rails.cache.fetch('Listing.all') { all }
+  end
+
+  def expire_contact_all_cache
+    Rails.cache.delete('Contact.all')
+  end
+
 
 end
