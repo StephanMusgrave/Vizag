@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :miniprofiler
 
   protected
 
@@ -13,5 +14,11 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:account_update) << :first_name
       devise_parameter_sanitizer.for(:account_update) << :last_name
     end
+
+  private
+
+  def miniprofiler
+    Rack::MiniProfiler.authorize_request # if user.has_manager?
+  end
 
 end
