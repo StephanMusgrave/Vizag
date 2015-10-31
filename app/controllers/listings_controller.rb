@@ -79,6 +79,7 @@ class ListingsController < ApplicationController
       format.html { redirect_to listings_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+    # expire_action :action => :show
   end
 
   private
