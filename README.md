@@ -3,10 +3,21 @@
 ## Deployment:
 $  git remote add development https://git.heroku.com/solindia-development.git
 ```sh
-$  git push development [development:master]
+$  git push development master
 ```
-$  heroku run rake db:migrate
+$  heroku run rake db:migrate --app solindia-development
 $  open  https://solindia-development.herokuapp.com
+
+git remote add test https://git.heroku.com/solindia-test.git
+git push test development:master
+
+<!-- to run a database migration on the solindia-test app -->
+heroku run rake db:migrate --app solindia-test
+
+<!-- to reset the database and load example data from seeds.rb -->
+heroku run rake db:reset --app solindia-test
+
+$  open  https://solindia-test.herokuapp.com
 
 ## Setup:
 $  bin/rails generate paperclip listing image
