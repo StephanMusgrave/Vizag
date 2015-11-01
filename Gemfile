@@ -20,6 +20,8 @@ gem "devise", ">= 3.5.2"
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
+gem 'dalli'
+gem 'memcachier'
 gem 'rack-mini-profiler'  # http://railscasts.com/episodes/368-miniprofiler?autoplay=true
 
 
