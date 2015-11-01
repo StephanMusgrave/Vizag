@@ -23,5 +23,3 @@ $ bin/rails g paperclip image_container picture
 $  bin/rails g active_admin:install
 $  bin/rake db:migrate
 $  bin/rails generate active_admin:resource Listing
-
-
