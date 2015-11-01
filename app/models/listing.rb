@@ -26,8 +26,8 @@ class Listing < ActiveRecord::Base
 
   validates_attachment_presence :image
 
-  after_save    :expire_contact_all_cache
-  after_destroy :expire_contact_all_cache
+  after_save    :expire_listing_all_cache
+  after_destroy :expire_listing_all_cache
 
 
   def at_least_one_picture
@@ -49,8 +49,8 @@ class Listing < ActiveRecord::Base
     Rails.cache.fetch('Listing.all') { all }
   end
 
-  def expire_contact_all_cache
-    Rails.cache.delete('Contact.all')
+  def expire_listing_all_cache
+    Rails.cache.delete('Listing.all')
   end
 
 

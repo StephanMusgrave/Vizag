@@ -18,15 +18,15 @@ class ImageContainer < ActiveRecord::Base
 
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
-  after_save    :expire_contact_all_cache
-  after_destroy :expire_contact_all_cache
+  after_save    :expire_imagecontainer_all_cache
+  after_destroy :expire_imagecontainer_all_cache
 
   def self.all_cached
-    Rails.cache.fetch('Listing.all') { all }
+    Rails.cache.fetch('ImageContainer.all') { all }
   end
 
   def expire_contact_all_cache
-    Rails.cache.delete('Contact.all')
+    Rails.cache.delete('ImageContainer.all')
   end
 
 end
